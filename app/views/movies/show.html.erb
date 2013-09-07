@@ -2,10 +2,19 @@
     <header>
       <h2><%= @movie.title %></h2>
     </header>
+    <%= image_for(@movie) %>
     <p>
       <%= @movie.description %>
     </p>
     <table>
+      <tr>
+        <th>Cast</th>
+        <td><%= @movie.cast %></td>
+      </tr>
+      <tr>
+        <th>Director</th>
+        <td><%= @movie.director %></td>
+      </tr>
       <tr>
         <th>Released:</th>
         <td><%= @movie.released_on.to_s(:release_date) %> (<%= time_ago_in_words(@movie.released_on) %> ago)</td>
@@ -13,6 +22,10 @@
       <tr>
         <th>Rating:</th>
         <td><%= @movie.rating %></td>
+      </tr>
+      <tr>
+        <th>Duration</th>
+        <td><%= @movie.duration %> minutes</td>
       </tr>
       <tr>
         <th>Total Gross:</th>
